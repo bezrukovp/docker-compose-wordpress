@@ -11,7 +11,7 @@ services:
       - ./certs:/etc/certs
     depends_on:
       - php-fpm
-    restart: on-failure
+    restart: 'no'
 
   php-fpm:
     build:
@@ -27,7 +27,7 @@ services:
       - WORDPRESS_DB_HOST=
       - WORDPRESS_DB_USER=
       - WORDPRESS_DB_PASSWORD=
-    restart: on-failure
+    restart: 'no'
 
   composer:
     image: composer/composer
@@ -43,4 +43,4 @@ services:
     ports: []
 #      - "1025:1025"
 #      - "8025:8025"
-    restart: on-failure
+    restart: 'no'
